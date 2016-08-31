@@ -3,6 +3,20 @@ execute pathogen#infect()
 set shell=/bin/bash
 runtime macros/matchit.vim
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_fortran_checkers = ['GNU Fortran']
+let g:syntastic_matlab_checkers = ['mlint']
+let g:syntastic_sh_checkers = ['Bashate']
+
 set ttyfast
 set lazyredraw
 
