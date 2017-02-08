@@ -100,11 +100,12 @@ alias rdown='rhythmbox-client --volume-down'
 alias rvol='rhythmbox-client --print-volume'
 alias rn='rhythmbox-client --next'
 alias rpp='rhythmbox-client --previous'
-alias f='ferret'
+alias f='if [ ! -d "$fjnl" ];then mkdir fjnl;fi;ferret -nojnl'
 alias q='exit'
+alias tg='cd /home/lijo/Downloads/softwares/Telegram && ./Telegram & disown'
 alias brew='sudo apt-get'
 alias tm='tmux -2'
-
+alias pyf='if [ ! -d "$fjnl" ];then mkdir fjnl;fi;source activate py27;pyferret -nojnl'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

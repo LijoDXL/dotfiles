@@ -13,7 +13,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ['pyflakes']
-let g:syntastic_fortran_checkers = ['GNU Fortran']
+let g:syntastic_fortran_checkers = ['gfortran']
 let g:syntastic_matlab_checkers = ['mlint']
 let g:syntastic_sh_checkers = ['Bashate']
 
@@ -85,10 +85,11 @@ let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
+let mysyntaxfile="~/.vim/mysyntax.vim"
+syntax on
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
-
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
