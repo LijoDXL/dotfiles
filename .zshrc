@@ -103,6 +103,7 @@ alias tg='cd /home/lijo/Downloads/softwares/Telegram && ./Telegram & disown'
 alias brew='sudo apt-get'
 alias tm='tmux -2'
 alias pyf='if [ ! -d "$fjnl" ];then mkdir fjnl;fi;source activate py27;pyferret -nojnl'
+alias sus='systemctl suspend'
 
 # added by me
 source /usr/local/ferret/ferret_paths
