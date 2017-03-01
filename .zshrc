@@ -101,10 +101,10 @@ alias f='if [ ! -d "$fjnl" ];then mkdir fjnl;fi;ferret -nojnl'
 alias q='exit'
 alias tg='cd /home/lijo/Downloads/softwares/Telegram && ./Telegram & disown'
 alias brew='sudo apt-get'
-alias tm='tmux -2'
-alias pyf='if [ ! -d "$fjnl" ];then mkdir fjnl;fi;source activate py27;pyferret -nojnl'
+alias tm='tmux -2u'
+alias pyf='if [ ! -d "$fjnl" ];then mkdir fjnl;fi;source activate ferret;pyferret -nojnl'
 alias sus='systemctl suspend'
-
+alias g2w='cd ~/INCOIS_internship_20_06_16/Project_INCOIS_Dec/work'
 # added by me
 source /usr/local/ferret/ferret_paths
 NCARG_ROOT=/usr/local/ncl
