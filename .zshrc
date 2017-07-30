@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, H, colored-man-pages, zsh-syntax-highlighting)
+plugins=(colored-man-pages z zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,6 +105,7 @@ alias tm='tmux -2u'
 alias pyf='if [ ! -d "$fjnl" ];then mkdir fjnl;fi;source activate ferret;pyferret -nojnl'
 alias sus='systemctl suspend'
 alias g2w='cd ~/INCOIS_internship_20_06_16/Project_INCOIS_Dec/work'
+alias gopen='gnome-open'
 # added by me
 source /usr/local/ferret/ferret_paths
 NCARG_ROOT=/usr/local/ncl
