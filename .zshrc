@@ -8,7 +8,6 @@
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
-DEFAULT_USER=$USER
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -97,28 +96,18 @@ alias rdown='rhythmbox-client --volume-down'
 alias rvol='rhythmbox-client --print-volume'
 alias rn='rhythmbox-client --next'
 alias rpp='rhythmbox-client --previous'
-alias f='if [ ! -d "$fjnl" ];then mkdir fjnl;fi;ferret -nojnl'
 alias q='exit'
-alias tg='cd /home/lijo/Downloads/softwares/Telegram && ./Telegram & disown'
 alias brew='sudo apt-get'
 alias tm='tmux -2u'
 alias pyf='if [ ! -d "$fjnl" ];then mkdir fjnl;fi;source activate ferret;pyferret -nojnl'
 alias sus='systemctl suspend'
 alias g2w='cd ~/INCOIS_internship_20_06_16/Project_INCOIS_Dec/work'
-alias gopen='gnome-open'
+alias ncl='source activate ncl_stable;ncl'
 # added by me
-source /usr/local/ferret/ferret_paths
-NCARG_ROOT=/usr/local/ncl
-    PATH=$NCARG_ROOT/bin:$PATH
-    export NCARG_ROOT
-    export PATH
-
-#added by powerline
-# export TERM=”screen-256color”
-#powerline-daemon -q
-#POWERLINE_BASH_CONTINUATION=1
-#POWERLINE_BASH_SELECT=1
-#. /home/lijo/Downloads/powerline-develop/powerline/bindings/zsh/powerline.zsh
-
-# added by Anaconda3 4.1.1 installer
-export PATH="/home/lijo/anaconda3/bin:$PATH"
+#source /usr/local/ferret/ferret_paths
+#NCARG_ROOT=/usr/local/ncl
+#    PATH=$NCARG_ROOT/bin:$PATH
+#    export NCARG_ROOT
+#    export PATH
+# added by Anaconda2 4.4.0 installer
+export PATH="/home/lijo/anaconda2/bin:$PATH"
