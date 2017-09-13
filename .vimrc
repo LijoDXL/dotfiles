@@ -1,6 +1,6 @@
 execute pathogen#infect()
 
-set shell=/bin/bash
+set shell=/usr/bin/zsh
 runtime macros/matchit.vim
 
 set statusline+=%#warningmsg#
@@ -165,8 +165,9 @@ set t_Co=256
 
 " Color scheme
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set background=dark " or light
-let g:solarized_termcolors=256
+set background=dark " light
+" uncomment if gnome-terminal is not using solarized-theme
+" let g:solarized_termcolors=256
 colorscheme solarized
 
 

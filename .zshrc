@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+# to use solarized theme in gnome-terminal
+  eval `dircolors ~/.dir_colors/.dircolors`
 # Path to your oh-my-zsh installation.
   export ZSH=/home/lijo/.oh-my-zsh
 
@@ -51,10 +52,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages z zsh-syntax-highlighting)
+plugins=(colored-man-pages z virtualenv zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -99,9 +99,8 @@ alias rpp='rhythmbox-client --previous'
 alias q='exit'
 alias brew='sudo apt-get'
 alias tm='tmux -2u'
-alias pyf='if [ ! -d "$fjnl" ];then mkdir fjnl;fi;source activate ferret;pyferret -nojnl'
+alias f='if [ ! -d "$fjnl" ];then mkdir fjnl;fi;source activate FERRET;pyferret -nojnl'
 alias sus='systemctl suspend'
-alias g2w='cd ~/INCOIS_internship_20_06_16/Project_INCOIS_Dec/work'
 alias ncl='source activate ncl_stable;ncl'
 # added by me
 #source /usr/local/ferret/ferret_paths
