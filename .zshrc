@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages z virtualenv zsh-syntax-highlighting)
+plugins=(colored-man-pages z zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -99,9 +99,19 @@ alias rpp='rhythmbox-client --previous'
 alias q='exit'
 alias brew='sudo apt-get'
 alias tm='tmux -2u'
-alias f='if [ ! -d "$fjnl" ];then mkdir fjnl;fi;source activate FERRET;pyferret -nojnl'
+alias f='[[ -d $PWD/fjnl ]] && echo "I found fjnl" || { mkdir fjnl; echo "fjnl created" }; [[ -n $CONDA_DEFAULT_ENV ]] && echo "$CONDA_DEFAULT_ENV is already set" || source activate FERRET; pyferret -nojnl'
 alias sus='systemctl suspend'
 alias ncl='source activate ncl_stable;ncl'
+edjnl() {
+  vim fjnl/ferret.jnl.~$1~;
+}
+wcjnl() {
+  wc fjnl/ferret.jnl.~$1~;
+}
+grepjnls() {
+  grep $1 fjnl/*;
+}
+alias grepjnlvar='/home/lijo/.grepjnl.com'
 # added by me
 #source /usr/local/ferret/ferret_paths
 #NCARG_ROOT=/usr/local/ncl
