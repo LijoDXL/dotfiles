@@ -3,7 +3,7 @@
 # to use solarized theme in gnome-terminal
   eval `dircolors ~/.dir_colors/.dircolors`
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/lijo/.oh-my-zsh
+  export ZSH=/home/$USER/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -97,21 +97,22 @@ alias rvol='rhythmbox-client --print-volume'
 alias rn='rhythmbox-client --next'
 alias rpp='rhythmbox-client --previous'
 alias q='exit'
-alias brew='sudo apt-get'
+alias brew='sudo apt'
 alias tm='tmux -2u'
-alias f='[[ -d $PWD/fjnl ]] && echo "I found fjnl" || { mkdir fjnl; echo "fjnl created" }; [[ -n $CONDA_DEFAULT_ENV ]] && echo "$CONDA_DEFAULT_ENV is already set" || source activate FERRET; pyferret -nojnl'
 alias sus='systemctl suspend'
-alias ncl='source activate ncl_stable;ncl'
+alias f='[[ -d $PWD/fjnl ]] && echo "I found fjnl" || { mkdir fjnl; echo "fjnl created" }; [[ -n $CONDA_DEFAULT_ENV ]] && echo "env is set as $CONDA_DEFAULT_ENV" || source activate FERRET; pyferret -nojnl'
+alias ncl='[[ -n $CONDA_DEFAULT_ENV ]] && echo "env is set as $CONDA_DEFAULT_ENV" || source activate ncl_stable; ncl'
+# functions for ferret jnl file management
 edjnl() {
   vim fjnl/ferret.jnl.~$1~;
 }
 wcjnl() {
   wc fjnl/ferret.jnl.~$1~;
 }
-grepjnls() {
+jnls() {
   grep $1 fjnl/*;
 }
-alias grepjnlvar='/home/lijo/.grepjnl.com'
+alias jnlvar='/home/$USER/.grepjnl.com'
 # added by me
 #source /usr/local/ferret/ferret_paths
 #NCARG_ROOT=/usr/local/ncl
@@ -119,4 +120,4 @@ alias grepjnlvar='/home/lijo/.grepjnl.com'
 #    export NCARG_ROOT
 #    export PATH
 # added by Anaconda2 4.4.0 installer
-export PATH="/home/lijo/anaconda2/bin:$PATH"
+export PATH="/home/$USER/anaconda2/bin:$PATH"
