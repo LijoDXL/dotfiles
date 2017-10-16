@@ -1,6 +1,6 @@
 execute pathogen#infect()
 
-set shell=/usr/bin/zsh
+set shell=/bin/zsh
 runtime macros/matchit.vim
 
 set statusline+=%#warningmsg#
@@ -197,7 +197,8 @@ set undoreload=10000
 :nnoremap <expr> Y (v:register ==# '"' ? '"+' : '') . 'Y'
 :xnoremap <expr> y (v:register ==# '"' ? '"+' : '') . 'y'
 :xnoremap <expr> Y (v:register ==# '"' ? '"+' : '') . 'Y'
-
+" makes switching modes easy
+inoremap jj <Esc>
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
