@@ -199,6 +199,9 @@ set undoreload=10000
 :xnoremap <expr> Y (v:register ==# '"' ? '"+' : '') . 'Y'
 " makes switching modes easy
 inoremap jj <Esc>
+" ENTER insterts newline in normal mode (also shift+ENTER)
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
