@@ -1,7 +1,12 @@
 #!/bin/zsh
-tmux new -s main -n work -d
-tmux split-window 'ipython'
-tmux split-window -h -p 60 'vim'
+tmux new -s main -n work -d 'vim'
+tmux split-window -p 40 'ipython'
+tmux split-window -h -p 60
+tmux select-pane -t 0
+tmux split-window -h -p 45
 tmux new-window -n misc
-tmux previous-window
+tmux new-window -n music
+tmux split-window -p 35
+tmux select-pane -t 0
+tmux select-window -t 1
 tmux -2u attach-session -d

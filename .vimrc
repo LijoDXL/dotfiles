@@ -20,8 +20,6 @@ let g:syntastic_sh_checkers = ['Bashate']
 set ttyfast
 set lazyredraw
 
-let g:ruby_path="~/.rvm/bin/ruby"
-
 " have jsx highlighting/indenting work in .js files as well
 let g:jsx_ext_required = 0
 
@@ -36,9 +34,6 @@ let g:session_autoload = 'no'
 map <Space> <leader>
 map <Leader>w :update<CR>
 map <Leader>q :qall<CR>
-map <Leader>gs :Gstatus<CR>
-map <Leader>gc :Gcommit<CR>
-map <Leader>gp :Gpush<CR>
 "
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
@@ -117,8 +112,8 @@ augroup vimrcEx
   " Enable spellchecking for Markdown
   autocmd FileType markdown setlocal spell
 
-  " Automatically wrap at 80 characters for Markdown
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+" Automatically wrap at 80 characters for Markdown
+autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
 
 " bind K to search word under cursor
@@ -128,6 +123,9 @@ nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
+" highlight longer lines
+" set colorcolumn=80
 
 let g:rspec_command = 'call Send_to_Tmux("NO_RENDERER=true bundle exec rspec {spec}\n")'
 " Mocha command is specific to Product Hunt setup. Probably doesn't work with
@@ -233,18 +231,11 @@ let g:html_indent_tags = 'li\|p'
 set splitbelow
 set splitright
 
-" Quicker window movement. Seemlessly navigate between Vim/Tmux panes
-let g:tmux_navigator_no_mappings = 1
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2
 
-" This is a hack due to a neovim bug for going Left
-" Details: https://github.com/christoomey/vim-tmux-navigator#it-doesnt-work-in-neovim-specifically-c-h
-nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-
-nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+" Disable tmux navigator when zooming the Vim pane
+let g:tmux_navigator_disable_when_zoomed = 1
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_ruby_checkers = ['mri']
