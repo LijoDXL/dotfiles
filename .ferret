@@ -1,4 +1,4 @@
-set mode journal fjnl/ferret.jnl
 \cancel mode verify
+set mode journal fjnl/ferret.jnl
 go startup.go
 set mode/last verify

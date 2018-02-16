@@ -99,7 +99,6 @@ alias q='exit'
 alias brew='sudo apt'
 alias tm='tmux -2u'
 alias sus='systemctl suspend'
-alias f='[[ -d $PWD/fjnl ]] && echo "I found fjnl" || { mkdir fjnl; echo "fjnl created" }; [[ -n $CONDA_DEFAULT_ENV ]] && echo "env is set as $CONDA_DEFAULT_ENV" || source activate FERRET; pyferret -nojnl'
 alias ncl='[[ -n $CONDA_DEFAULT_ENV ]] && echo "env is set as $CONDA_DEFAULT_ENV" || source activate ncl_stable; ncl'
 alias ipy='ipython --pylab'
 # functions for ferret jnl file management
