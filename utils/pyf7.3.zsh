@@ -6,14 +6,14 @@ else
   echo "fjnl created"
 fi
 if [ -z "$CONDA_DEFAULT_ENV" ]; then
-  source activate FERRET
+  source activate PYF
   echo "$CONDA_DEFAULT_ENV env activated"
-elif [ "$CONDA_DEFAULT_ENV" = "FERRET" ]; then
+elif [ "$CONDA_DEFAULT_ENV" = "PYF" ]; then
   echo "env is already set as $CONDA_DEFAULT_ENV"
 else
   echo "$CONDA_DEFAULT_ENV env deactivated"
   source deactivate
-  source activate FERRET
-  echo "FERRET env activated"
+  source activate PYF
+  echo "PYF env activated"
 fi
 pyferret -nojnl $*
