@@ -101,6 +101,9 @@ alias tm='tmux -2u'
 alias sus='systemctl suspend'
 alias ncl='[[ -n $CONDA_DEFAULT_ENV ]] && echo "env is set as $CONDA_DEFAULT_ENV" || source activate ncl_stable; ncl'
 alias ipy='ipython --pylab'
+# no alias for ferret, they run from scripts f--->ferret7.3, ff--->pyf7.1, pyf--->pyf7.3
+# Note: libpng15 conflicts with seaborn, so no seaborn in PYF env of pyf7.3
+
 # functions for ferret jnl file management
 edjnl() {
   vim fjnl/ferret.jnl.~$1~;
