@@ -20,12 +20,12 @@ let g:syntastic_sh_checkers = ['Bashate']
 set ttyfast
 set lazyredraw
 
-" have jsx highlighting/indenting work in .js files as well
-let g:jsx_ext_required = 0
+" for built-in fuzzy finding
+set path+=**
+" Nice tab of matched file
+set wildmenu
 
 let $PATH='/usr/local/bin:' . $PATH
-
-:au FocusLost * :wa "Save on focus lost
 
 " Sessions
 let g:session_autoload = 'no'
@@ -34,13 +34,6 @@ let g:session_autoload = 'no'
 map <Space> <leader>
 map <Leader>w :update<CR>
 map <Leader>q :qall<CR>
-"
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
 
 " Toggle nerdtree with F10
 map <F10> :NERDTreeToggle<CR>
@@ -75,19 +68,17 @@ set hlsearch      " highlight matches
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 
-" Fuzzy finder: ignore stuff that can't be opened, and generated files
-let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
-
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 let mysyntaxfile="~/.vim/mysyntax.vim"
 syntax on
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
+
+" if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+"   syntax on
+" endif
+" if filereadable(expand("~/.vimrc.bundles"))
+"   source ~/.vimrc.bundles
+" endif
 
 filetype plugin indent on
 
@@ -106,18 +97,15 @@ augroup vimrcEx
     \ endif
 
   " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
   " Enable spellchecking for Markdown
   autocmd FileType markdown setlocal spell
-
+  " For commenting in ferret
+  autocmd FileType ferret setlocal commentstring=!\ %s
 " Automatically wrap at 80 characters for Markdown
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
-
-" bind K to search word under cursor
-nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -127,27 +115,8 @@ set expandtab
 " highlight longer lines
 " set colorcolumn=80
 
-let g:rspec_command = 'call Send_to_Tmux("NO_RENDERER=true bundle exec rspec {spec}\n")'
-" Mocha command is specific to Product Hunt setup. Probably doesn't work with
-" other apps
-let g:mocha_js_command = 'call Send_to_Tmux("$(npm bin)/mocha --opts spec/javascripts/mocha.opts {spec}\n")'
-let g:rspec_runner = "os_x_iterm"
-
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup
-  let g:grep_cmd_opts = '--line-numbers --noheading'
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -158,8 +127,8 @@ let g:airline_symbols.space = "\ua0"
 let g:airline_theme='solarized'
 set t_Co=256
 
-:set smartcase
-:set ignorecase
+set smartcase
+set ignorecase
 
 " Color scheme
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -193,16 +162,13 @@ set undoreload=10000
 " insert time stamp
 :nnoremap <F5> "=strftime("%c")<CR>P
 
-:nnoremap <expr> y (v:register ==# '"' ? '"+' : '') . 'y'
-:nnoremap <expr> yy (v:register ==# '"' ? '"+' : '') . 'yy'
-:nnoremap <expr> Y (v:register ==# '"' ? '"+' : '') . 'Y'
-:xnoremap <expr> y (v:register ==# '"' ? '"+' : '') . 'y'
-:xnoremap <expr> Y (v:register ==# '"' ? '"+' : '') . 'Y'
 " makes switching modes easy
 inoremap jj <Esc>
+
 " ENTER insterts newline in normal mode (also shift+ENTER)
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
@@ -218,17 +184,12 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
-" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-
 " Get off my lawn - helpful when learning Vim :)
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -244,31 +205,8 @@ let g:tmux_navigator_disable_when_zoomed = 1
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_enable_highlighting=0
 
-" Remove trailing whitespace on save for ruby files.
-function! s:RemoveTrailingWhitespaces()
-  "Save last cursor position
-  let l = line(".")
-  let c = col(".")
-
-  %s/\s\+$//ge
-
-  call cursor(l,c)
-endfunction
-
-au BufWritePre * :call <SID>RemoveTrailingWhitespaces()
 
 " cmd n, cmd p for fwd/backward in search
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
 
-" Create related file (Rails Spec file if missing). :AC
-function! s:CreateRelated()
-  let related = rails#buffer().alternate_candidates()[0]
-  call s:Open(related)
-endfunction
-
-function! s:Open(file)
-  exec('vsplit ' . a:file)
-endfunction
-
-command! AC :call <SID>CreateRelated()
