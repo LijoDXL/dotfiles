@@ -207,7 +207,7 @@ EXEC 01;31  # Unix
 ### Text formats
 
 # Text that we can edit with a regular editor
-.txt 36
+.txt 32
 .org 32
 .md 32
 .mkd 32
@@ -269,7 +269,8 @@ EXEC 01;31  # Unix
 .sql 32
 .csv 36
 .jnl 32
-
+.m 32
+.f 32
 ### Multimedia formats
 
 # Image

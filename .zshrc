@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # to use solarized theme in gnome-terminal
+# and get the ls colors right
   eval `dircolors ~/.dir_colors/.dircolors`
 # Path to your oh-my-zsh installation.
   export ZSH=/home/$USER/.oh-my-zsh
@@ -30,7 +32,7 @@ ZSH_THEME="agnoster"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -117,11 +119,6 @@ jnls() {
 }
 #search for a keyword in a partiuclar jnl file
 alias jnlvar='/home/$USER/.grepjnl.com'
-# added by me
-#source /usr/local/ferret/ferret_paths
-#NCARG_ROOT=/usr/local/ncl
-#    PATH=$NCARG_ROOT/bin:$PATH
-#    export NCARG_ROOT
-#    export PATH
+
 # added by Anaconda2 4.4.0 installer
 export PATH="/home/$USER/anaconda2/bin:$PATH"
