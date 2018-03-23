@@ -14,16 +14,16 @@ if [ "$WIDTH" -gt "$MEDIUM" ]; then
   if [ -n "rhythmbox_pid" ]
   then
 
-    MPD="#[fg=colour241,bg=colour234,bold,noitalics,nounderscore]$SEPE#[fg=colour252,bg=colour234,nobold,noitalics,nounderscore] $MUSIC $(music_ctrl --status)"
+    MPD="#[fg=colour241,bg=colour0,bold,noitalics,nounderscore]$SEPE#[fg=colour252,bg=colour0,nobold,noitalics,nounderscore] $MUSIC $(music_ctrl --status)"
     date_colour='colour252'
   fi
 fi
 
 if [ "$WIDTH" -ge "$SMALL" ]; then
-  UNAME="#[fg=colour254,bg=colour234,bold,noitalics,nounderscore]$SEP#[fg=colour16,bg=colour252,bold,noitalics,nounderscore] $(uname -n)"
+  UNAME="#[fg=colour254,bg=colour0,bold,noitalics,nounderscore]$SEP#[fg=colour16,bg=colour252,bold,noitalics,nounderscore] $(uname -n)"
 fi
 
-DATE="#[fg=colour241,bg=colour234,nobold,noitalics,nounderscore]$SEPE#[fg=colour252,bg=colour234,bold] $CALENDAR#[fg=colour252,bg=colour234,nobold,noitalics,nounderscore] $(date +'%d/%m/%y')"
-TIME="#[fg=colour241,bg=colour234,nobold,noitalics,nounderscore]$SEPE#[fg=colour252,bg=colour234,bold] $CLOCK#[fg=colour252,bg=colour234,nobold]$(date +'%H:%M')"
+DATE="#[fg=colour241,bg=colour0,nobold,noitalics,nounderscore]$SEPE#[fg=colour252,bg=colour0,bold] $CALENDAR#[fg=colour252,bg=colour0,nobold,noitalics,nounderscore] $(date +'%d/%m/%y')"
+TIME="#[fg=colour241,bg=colour0,nobold,noitalics,nounderscore]$SEPE#[fg=colour252,bg=colour0,bold] $CLOCK#[fg=colour252,bg=colour0,nobold]$(date +'%H:%M')"
 
 echo "$MPD $DATE $TIME $UNAME " | sed 's/ *$/ /g'
