@@ -14,7 +14,7 @@ if [ "$WIDTH" -gt "$MEDIUM" ]; then
   if [ -n "rhythmbox_pid" ]
   then
 
-    MPD="#[fg=colour236,bg=colour234,bold,noitalics,nounderscore]$SEPE#[fg=colour252,bg=colour234,nobold,noitalics,nounderscore] $MUSIC $(music_ctrl --status)"
+    MPD="#[fg=colour241,bg=colour234,bold,noitalics,nounderscore]$SEPE#[fg=colour252,bg=colour234,nobold,noitalics,nounderscore] $MUSIC $(music_ctrl --status)"
     date_colour='colour252'
   fi
 fi
