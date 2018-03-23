@@ -125,6 +125,8 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.space = "\ua0"
 let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
+" let g:airline_solarized_bg='dark'
 set t_Co=256
 
 set smartcase
@@ -151,7 +153,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:airline#extensions#tabline#enabled = 1
 
 " Persistent undo
 set undodir=~/.vim/undo/
@@ -168,6 +169,9 @@ inoremap jj <Esc>
 " ENTER insterts newline in normal mode (also shift+ENTER)
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+
+"cd to path of current file
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
 " Tab completion
 " will insert tab at beginning of line,
@@ -190,7 +194,6 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
@@ -210,3 +213,5 @@ let g:syntastic_enable_highlighting=0
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
 
+" add ferret header template
+nnoremap ,jnl :-1read $HOME/.vim/.skeleton_ferret_header.jnl<CR>A
