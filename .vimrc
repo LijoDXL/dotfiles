@@ -161,8 +161,15 @@ set undolevels=1000
 set undoreload=10000
 
 " insert time stamp
-:nnoremap <F5> "=strftime("%c")<CR>P
+nnoremap <F5> "=strftime("%c")<CR>P
 
+" align at =
+nnoremap <Leader>= :Tab /=<CR>
+vnoremap <Leader>= :Tab /=<CR>
+
+" align at !
+nnoremap <Leader>! :Tab /!<CR>
+vnoremap <Leader>! :Tab /!<CR>
 " makes switching modes easy
 inoremap jj <Esc>
 
