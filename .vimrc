@@ -164,12 +164,13 @@ set undoreload=10000
 nnoremap <F5> "=strftime("%c")<CR>P
 
 " align at =
-nnoremap <Leader>= :Tab /=<CR>
-vnoremap <Leader>= :Tab /=<CR>
+nnoremap <Leader>= :Tab 1=<CR>
+vnoremap <Leader>= :Tab 1=<CR>
 
 " align at !
 nnoremap <Leader>! :Tab /!<CR>
 vnoremap <Leader>! :Tab /!<CR>
+
 " makes switching modes easy
 inoremap jj <Esc>
 

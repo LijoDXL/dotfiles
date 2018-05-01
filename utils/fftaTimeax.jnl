@@ -1,0 +1,35 @@
+! Description : plots fft of given variable with time period in x-axis
+!
+! Arguments   : Mandatory : $1 - variable to filter
+!               optional  : $2 - lower hlim
+!                           $3 - upper hlim
+!                           $4 - delta for hlim
+!
+! Usage       : fftaTimeax.jnl arg1
+!
+! Note        : works only if time axis is regular
+!
+! Author : Lijo J
+! Contact: abrahamjoseph.l@incois.gov.in
+! Date   : Thursday 12 April 2018 02:54:43 PM IST
+! Modifications :
+!----------------------------------------------------------------------------
+
+let var = $1
+let box = tbox[gt=var]
+let dt = box[l=@ave]
+LET ns = `var,return=lend`
+LET FFT_ny = 1.0/(2.0*dt)
+LET FFT_freq= 1.0/(ns*dt)
+! Define a frequency axis.
+DEFINE AXIS/T=`FFT_freq`:`FFT_ny`:`FFT_freq` FAXIS
+DEFINE GRID/T=FAXIS gfft
+LET a = T[g=gfft]
+! Define the period from the frequency axis.
+LET per = 1./a
+set win/new/asp=0.3
+PLOT/VS/LINE/graticule=(dash,color=black,thick=1)/hlimit=$2#0#:$3#400#:$4#20#/thick=2/nolab/set/color=red per[l=1:`ns/2.0`],ffta(var)
+ppl xlab "Time period"
+ppl ylab "FFTA"
+PPl title "@ACFFTA $1"
+ppl plot
