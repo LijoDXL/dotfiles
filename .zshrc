@@ -105,6 +105,8 @@ alias tm='tmux -2u'
 alias sus='systemctl suspend'
 alias ncl='[[ -n $CONDA_DEFAULT_ENV ]] && echo "env is set as $CONDA_DEFAULT_ENV" || source activate ncl_stable; ncl'
 alias ipy='ipython --pylab'
+alias path='echo -e ${PATH//:/\\n}'
+alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 # no alias for ferret, they run from scripts f--->ferret7.3, ff--->pyf7.1, pyf--->pyf7.3
 # Note: libpng15 conflicts with seaborn, so no seaborn in PYF env of pyf7.3
 
@@ -122,5 +124,5 @@ jnls() {
 #search for a keyword in a partiuclar jnl file
 alias jnlvar='/home/$USER/.grepjnl.com'
 
-# added by Anaconda2 4.4.0 installer
-export PATH="/home/$USER/anaconda2/bin:$PATH"
+# added by Miniconda installer
+export PATH="/home/$USER/miniconda3/bin:$PATH"

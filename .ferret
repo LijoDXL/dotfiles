@@ -3,6 +3,6 @@
 SET MODE JOURNAL fjnl/ferret.jnl
 CAN MODE logo
 
-GO startup.go
+GO /home/lijo/my_dotfiles/utils/startup.go
 
 SET MODE/LAST verify

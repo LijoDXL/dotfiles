@@ -161,7 +161,7 @@ set undolevels=1000
 set undoreload=10000
 
 " insert time stamp
-nnoremap <F5> "=strftime("%c")<CR>P
+nnoremap <F5> "=strftime("%d-%b-%Y %T")<CR>P
 
 " align at =
 nnoremap <Leader>= :Tab 1=<CR>
@@ -195,12 +195,6 @@ function! InsertTabWrapper()
     endif
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-
-" Get off my lawn - helpful when learning Vim :)
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow

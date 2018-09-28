@@ -2,8 +2,8 @@ SEP=
 SEPE=
 
 CLOCK=⌚
-CALENDAR=☼
-MUSIC=♫
+CALENDAR=📆
+MUSIC=🎧
 
 WIDTH=${1}
 

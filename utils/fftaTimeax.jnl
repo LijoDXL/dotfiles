@@ -18,7 +18,7 @@
 let var = $1
 let box = tbox[gt=var]
 let dt = box[l=@ave]
-LET ns = `var,return=lend`
+LET ns = `var,return=lend` - `var,return=lstart` + 1
 LET FFT_ny = 1.0/(2.0*dt)
 LET FFT_freq= 1.0/(ns*dt)
 ! Define a frequency axis.

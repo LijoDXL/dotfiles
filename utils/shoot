@@ -1,6 +1,6 @@
 #!/bin/zsh
 tmux new -s main -n work -d 'vim'
-tmux split-window -p 40 'ipython'
+tmux split-window -p 40 'source activate PYF;ipython'
 tmux split-window -h -p 60
 tmux select-pane -t 0
 tmux split-window -h -p 45
