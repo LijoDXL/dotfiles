@@ -121,8 +121,6 @@ wcjnl() {
 jnls() {
   grep $1 fjnl/*;
 }
-#search for a keyword in a partiuclar jnl file
-alias jnlvar='/home/$USER/.grepjnl.com'
 
 # added by Miniconda installer
 export PATH="/home/$USER/miniconda3/bin:$PATH"
