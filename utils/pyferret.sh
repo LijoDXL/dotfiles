@@ -1,14 +1,10 @@
 #!/bin/bash
 
-if [ -z "$CONDA_DEFAULT_ENV" ]; then
-  source activate PYF
-  echo "$CONDA_DEFAULT_ENV env activated"
-elif [ "$CONDA_DEFAULT_ENV" = "PYF" ]; then
+. /home/lijo/miniconda3/etc/profile.d/conda.sh #for conda ver > 4.4.x
+if [ "$CONDA_DEFAULT_ENV" = "PYF" ]; then
   echo "env is already set as $CONDA_DEFAULT_ENV"
 else
-  echo "$CONDA_DEFAULT_ENV env deactivated"
-  source deactivate
-  source activate PYF
+  conda activate PYF
   echo "PYF env activated"
 fi
 

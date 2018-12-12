@@ -1,7 +1,7 @@
 \CANCEL MODE verify
 
 SET MODE JOURNAL fjnl/ferret.jnl
-SET MODE GRAT:"LARGE(COLOR=black,dash),SMALL(COLOR=black,dash)"
+!SET MODE GRAT:"LARGE(COLOR=black,dash),SMALL(COLOR=black,dash)"
 CAN MODE logo
 
 sp ls -t1 fjnl/* | head -2 | tail -1
