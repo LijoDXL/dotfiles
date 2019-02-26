@@ -24,6 +24,9 @@ set lazyredraw
 set path+=**
 " Nice tab of matched file
 set wildmenu
+" code folding
+set foldmethod=indent
+set foldlevel=99
 
 let $PATH='/usr/local/bin:' . $PATH
 
