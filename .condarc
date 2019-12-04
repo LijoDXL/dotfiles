@@ -1,5 +1,7 @@
-changeps1: false
-ssl_verify: false
-channels:
-  - conda-forge
-  - defaults
+changeps1: False
+#ssl_verify: false
+#channels:
+#  - conda-forge
+#  - defaults
+#sat_solver: pycryptosat
+#channel_priority: strict

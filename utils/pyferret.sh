@@ -1,11 +1,11 @@
 #!/bin/bash
 
 . /home/lijo/miniconda3/etc/profile.d/conda.sh #for conda ver > 4.4.x
-if [ "$CONDA_DEFAULT_ENV" = "PYF" ]; then
+if [ "$CONDA_DEFAULT_ENV" = "XR" ]; then
   echo "env is already set as $CONDA_DEFAULT_ENV"
 else
-  conda activate PYF
-  echo "PYF env activated"
+  conda activate XR
+  echo "XR env activated"
 fi
 
 if [ -d $PWD/fjnl ]; then
