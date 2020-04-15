@@ -127,7 +127,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
-let g:airline_theme='solarized'
+let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled = 1
 " let g:airline_solarized_bg='dark'
 set t_Co=256
@@ -136,11 +136,11 @@ set smartcase
 set ignorecase
 
 " Color scheme
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set background=dark " light
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" set background=dark " light
 " uncomment if gnome-terminal is not using solarized-theme
 " let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme nord
 
 
 " Numbers

@@ -1,0 +1,4 @@
+MUSIC=🎧
+MPD="$(music_ctrl --status)"
+
+echo "$MUSIC $MPD"
