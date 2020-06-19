@@ -1,4 +1,5 @@
-#!/home/lijo/anaconda2/bin/python -u
+#!/usr/bin/python -u
+# add this script to your system PATH
 
 import sys, getopt, dbus
 from subprocess import Popen, PIPE

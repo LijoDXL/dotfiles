@@ -3,7 +3,7 @@
 
 # to use solarized theme in gnome-terminal
 # and get the ls colors right
-  eval `dircolors ~/.dir_colors/.dircolors`
+  eval `dircolors ~/dotfiles/.dir_colors/.dircolors`
 # Path to your oh-my-zsh installation.
   export ZSH=/home/$USER/.oh-my-zsh
 # shows virtualenv nicely
@@ -103,10 +103,12 @@ alias clr='clear'
 alias brew='sudo apt'
 alias tm='tmux -2u'
 alias sus='systemctl suspend'
-alias ncl='[[ -n $CONDA_DEFAULT_ENV ]] && echo "env is set as $CONDA_DEFAULT_ENV" || source activate ncl_stable; ncl'
+export win="/mnt/c/Users/lij2l"
 alias ipy='ipython --pylab'
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
 # no alias for ferret, they run from scripts f--->ferret7.3, ff--->pyf7.1, pyf--->pyf7.3
 # Note: libpng15 conflicts with seaborn, so no seaborn in PYF env of pyf7.3
 
