@@ -1,4 +1,6 @@
-#!/bin/zsh
+#!/bin/bash
+# creates 3 windows 'work', 'misc' and 'jupyter'
+# splits window 1 in 3 panes, and window 3 in 2 panes
 tmux new -s main -n work -d 'vim'
 tmux split-window -p 40
 tmux split-window -h -p 60

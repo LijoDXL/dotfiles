@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/bin/bash
 source /home/lijo/local/ferret-7.4.4-RHEL7-64/ferret_paths
 if [ -d $PWD/fjnl ]; then
   echo "I found fjnl"

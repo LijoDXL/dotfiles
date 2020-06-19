@@ -3,6 +3,7 @@
 # agnoster's Theme - https://gist.github.com/3712874
 # A Powerline-inspired theme for ZSH
 #
+# #Tweaked to suit me
 # # README
 #
 # In order for this theme to render correctly, you will need a
