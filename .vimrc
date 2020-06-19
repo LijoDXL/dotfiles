@@ -1,8 +1,22 @@
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'arcticicestudio/nord-vim'
+Plug 'scrooloose/syntastic', { 'for': ['python', 'fortran', 'bash', 'matlab']}
+Plug 'godlygeek/tabular'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-commentary'
+Plug 'sickill/vim-pasta'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'christoomey/vim-tmux-navigator'
+call plug#end()
 
 set shell=/bin/zsh
 runtime macros/matchit.vim
 
+" syntastic plugin settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -16,6 +30,7 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_fortran_checkers = ['gfortran']
 let g:syntastic_matlab_checkers = ['mlint']
 let g:syntastic_sh_checkers = ['Bashate']
+" end
 
 set ttyfast
 set lazyredraw

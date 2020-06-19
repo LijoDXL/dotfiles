@@ -204,6 +204,8 @@ EXEC 01;31  # Unix
 # to colorize below. Put the extension, a space, and the color init string.
 # (and any comments you want to add after a '#')
 
+#Juopyter
+.ipynb 01;33
 ### Text formats
 
 # Text that we can edit with a regular editor
