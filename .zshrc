@@ -127,3 +127,4 @@ jnls() {
 # added by Miniconda installer
 # export PATH="/home/$USER/miniconda3/bin:$PATH" #for conda ver < 4.4.x
 . /home/lijo/miniconda3/etc/profile.d/conda.sh #for conda ver > 4.4.x
+source /home/lijo/.myGithubToken
