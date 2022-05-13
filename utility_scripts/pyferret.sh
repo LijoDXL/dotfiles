@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. /home/lijo/miniconda3/etc/profile.d/conda.sh #for conda ver > 4.4.x
+. /home/lijo/mambaforge/etc/profile.d/conda.sh #for conda ver > 4.4.x
 if [ "$CONDA_DEFAULT_ENV" = "XR" ]; then
   echo "env is already set as $CONDA_DEFAULT_ENV"
 else
