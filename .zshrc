@@ -105,6 +105,7 @@ alias tm='tmux -2u'
 alias sus='systemctl suspend'
 export win="/mnt/c/Users/lij2l"
 alias ipy='ipython --pylab'
+alias jn='cd /media/lijo/ext4_common/WORK/JupyterNotebooks'
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 export GEM_HOME="$HOME/learning_jekyll/gems"
@@ -126,12 +127,21 @@ jnls() {
 
 # added by Miniconda installer
 # export PATH="/home/$USER/miniconda3/bin:$PATH" #for conda ver < 4.4.x
-. /home/lijo/miniconda3/etc/profile.d/conda.sh #for conda ver > 4.4.x
+# . /home/lijo/miniconda3/etc/profile.d/conda.sh #for conda ver > 4.4.x  # commented out by conda initialize
+source /home/lijo/.myGithubToken
 
-# WSL in windows 11 doesn't need Xserver
-# WSL 2 X-server setting
-# if [[ ${HOST} == "MrGray" ]];then
-  # export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
-  # export LIBGL_ALWAYS_INDIRECT=1
-# fi
-source ~/.myGithubToken
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/lijo/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/lijo/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/home/lijo/mambaforge/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/lijo/mambaforge/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<

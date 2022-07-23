@@ -3,7 +3,6 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'arcticicestudio/nord-vim'
 Plug 'scrooloose/syntastic', { 'for': ['python', 'fortran', 'bash', 'sh', 'matlab']}
 Plug 'JuliaEditorSupport/julia-vim'
-" Plug 'scrooloose/syntastic'
 Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
