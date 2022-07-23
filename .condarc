@@ -1,4 +1,4 @@
-auto_activate_base: false
+auto_activate_base: False
 changeps1: False
 #ssl_verify: false
 #channels:

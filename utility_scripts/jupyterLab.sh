@@ -6,7 +6,7 @@ else
   conda activate XR
   echo "XR env activated"
 fi
-if [[ "$(hostname)" = "RED" ]]; then
+if [[ "$(hostname)" = "MrGray" ]]; then
   jupyter-lab --no-browser
 else
   jupyter-lab

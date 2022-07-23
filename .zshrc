@@ -107,8 +107,8 @@ export win="/mnt/c/Users/lij2l"
 alias ipy='ipython --pylab'
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
+export GEM_HOME="$HOME/learning_jekyll/gems"
+export PATH="$GEM_HOME/bin:$PATH"
 # no alias for ferret, they run from scripts f--->ferret7.3, ff--->pyf7.1, pyf--->pyf7.3
 # Note: libpng15 conflicts with seaborn, so no seaborn in PYF env of pyf7.3
 
@@ -127,3 +127,11 @@ jnls() {
 # added by Miniconda installer
 # export PATH="/home/$USER/miniconda3/bin:$PATH" #for conda ver < 4.4.x
 . /home/lijo/miniconda3/etc/profile.d/conda.sh #for conda ver > 4.4.x
+
+# WSL in windows 11 doesn't need Xserver
+# WSL 2 X-server setting
+# if [[ ${HOST} == "MrGray" ]];then
+  # export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+  # export LIBGL_ALWAYS_INDIRECT=1
+# fi
+source ~/.myGithubToken

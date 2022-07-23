@@ -1,7 +1,9 @@
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'arcticicestudio/nord-vim'
-Plug 'scrooloose/syntastic', { 'for': ['python', 'fortran', 'bash', 'matlab']}
+Plug 'scrooloose/syntastic', { 'for': ['python', 'fortran', 'bash', 'sh', 'matlab']}
+Plug 'JuliaEditorSupport/julia-vim'
+" Plug 'scrooloose/syntastic'
 Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -29,7 +31,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_fortran_checkers = ['gfortran']
 let g:syntastic_matlab_checkers = ['mlint']
-let g:syntastic_sh_checkers = ['Bashate']
+let g:syntastic_sh_checkers = ['sh']
 " end
 
 set ttyfast

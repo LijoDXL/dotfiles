@@ -1,4 +1,7 @@
-MUSIC=🎧
-MPD="$(music_ctrl --status)"
-
+if [ "$(hostname)" = "RED" ];then
+  MUSIC=" "
+  MPD=" "
+else
+  MUSIC=🎧
+  MPD="$(music_ctrl --status)"
 echo "$MUSIC $MPD"
